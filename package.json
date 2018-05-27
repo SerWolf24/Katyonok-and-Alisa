@@ -1,0 +1,10 @@
+﻿{
+    "private": true,
+    "scripts": {
+        "start": "micro"
+    },
+
+    "dependencies": {
+        "micro": "^9.1.0"
+    }
+}
