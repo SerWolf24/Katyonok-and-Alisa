@@ -8,7 +8,6 @@
 <age>30</age>
 <growth unit="см">185</growth>
 </man>
-</people>
 <context>
   <input pattern="* привет* *">
     <output value="Ну првиет"/>
