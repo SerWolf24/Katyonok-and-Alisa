@@ -1,6 +1,17 @@
-﻿<text>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Пример XML документа -->
+<people>
+<man id="1">
+<name>Sergey</name>
+<surname>Bocharov</surname>
+<nationality>Русский</nationality>
+<age>30</age>
+<growth unit="см">185</growth>
+</man>
+</people>
+<context>
   <input pattern="* привет* *">
     <output value="Ну првиет"/>
   </input>
-</text>
+</context>
 
