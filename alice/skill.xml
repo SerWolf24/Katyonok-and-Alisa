@@ -1,19 +1,6 @@
-﻿<context>
+﻿<text>
   <input pattern="* привет* *">
     <output value="Ну првиет"/>
   </input>
-</context>
-{
-  "response": {
-    "text": "Здравствуйте! Это мы, хороводоведы.",
-    "tts": "Здравствуйте! Это мы, хоров+одо в+еды.",
-    "buttons": [
-        {
-            "title": "Надпись на кнопке",
-            "payload": {},
-            "url": "https://example.com/",
-            "hide": true
-        }
-    ],
-    "end_session": false
-  }
+</text>
+
