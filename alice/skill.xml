@@ -1,8 +1,8 @@
 <context>
 
     <sample>
-        <item value="Кто такая Алиса"/>
-        <item value="Что такое бот"/>
+        <item value="Как снизить вес?"/>
+        <item value="Мне нужно похудеть!"/>
     </sample>
 
     <input pattern="* (привет*|здравствуй*|хай|хой|*даров*|доброе утро|добрый вечер|добрый день) *">
@@ -28,6 +28,7 @@
         <var name="end_session" value="javascript: true"/>
         <output value="Ну пока, незнакомый человек!" if="empty($UserName)"/>
         <output value="Пока-пока, $UserName!"/>
+        <output value="До встречи, $UserName!"/>
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
@@ -37,7 +38,7 @@
             <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
                 <param name="format" value="xml"/>
                 <param name="action" value="opensearch"/>
-                <param name="search" value="$Text"/>
+                <param name="search" value="'большой' $Text"/>
             </get>
 
             <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
