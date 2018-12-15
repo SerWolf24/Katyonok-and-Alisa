@@ -30,14 +30,7 @@
         <output value="$UserName, за более подробной информацией обратитесь к консультанту по питанию!"/>
     </input>
 
-    <input pattern="* (пока*|до свидания*|прощай*|замолчи*|заткни*сь) *">
-        <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомый человек!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
-        <output value="До встречи, $UserName!"/>
-    </input>
 
-<context>
     <input pattern="[* remind* [me]] { [[to] $Text] [$Date] [$Time] }">
         <!-- Jump to the reminder creation if Text and Time have been provided -->
         <context id="reminder" if="full($Text) and full($Time)"/>
@@ -78,6 +71,12 @@
             <output value='OK, I will remind you "$Text" on $Fmt at $Time'/>
         </context>
     </input>
-</context>
+
+    <input pattern="* (пока*|до свидания*|прощай*|замолчи*|заткни*сь) *">
+        <var name="end_session" value="javascript: true"/>
+        <output value="Ну пока, незнакомый человек!" if="empty($UserName)"/>
+        <output value="Пока-пока, $UserName!"/>
+        <output value="До встречи, $UserName!"/>
+    </input>
 
 </context>
