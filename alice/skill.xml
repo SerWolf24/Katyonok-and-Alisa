@@ -5,26 +5,26 @@
         <item value="Что такое бот"/>
     </sample>
 
-    <input pattern="* (привет*|здравствуй*) *">
+    <input pattern="* (привет*|здравствуй*|хай|хой|*даров*|доброе утро|добрый вечер|добрый день) *">
         <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
+            <item value="Привет, $UserName! Рада снова видеть вас!"/>
+            <item value="Здравствуйте, $UserName! Я уже успела соскучиться..."/>
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
+            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного для людей, которые хотят хорошо себя чувствовать, хорошо выглядеть и корректировать фигуру. Как вас зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <output value="Приятно познакомиться, $UserName! Интересует вас что-нибудь из этого? Желаете снизить вес? Может быть улучшить самочувствие? Набрать мышечную массу? Или просто хотите разобраться в питании?"/>
                 <context/>
             </input>
         </context>
     </input>
 
-    <input pattern="* пока *">
+    <input pattern="* (пока*|до свидания*|прощай*|замолчи*|заткни*сь) *">
         <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
+        <output value="Ну пока, незнакомый человек!" if="empty($UserName)"/>
         <output value="Пока-пока, $UserName!"/>
     </input>
 
