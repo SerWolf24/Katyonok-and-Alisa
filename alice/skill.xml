@@ -5,7 +5,7 @@
         <item value="Мне нужно похудеть!"/>
     </sample>
 
-    <input pattern="* (привет*|здравствуй*|хай|хой|*даров*|доброе утро|добрый вечер|добрый день) *">
+    <input pattern="*">
         <output if="full($UserName)">
             <item value="Привет, $UserName! Рада снова видеть вас!"/>
             <item value="Хаай, $UserName!"/>
@@ -14,7 +14,6 @@
         </output>
 
         <context if="empty($UserName)" id="name">
-            <input pattern="*">
             <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного для людей, которые хотят хорошо себя чувствовать, хорошо выглядеть и корректировать фигуру. Как вас зовут?"/>
 
             <input pattern="$Text">
